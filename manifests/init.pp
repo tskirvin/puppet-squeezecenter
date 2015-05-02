@@ -24,9 +24,9 @@ class squeezecenter (
   $release = 'stable'
 ) {
   apt::source { 'squeezecenter':
-    include_src => false,
-    location    => $repo,
-    release     => $release
+    include  => { 'src' => false, 'deb' => true },
+    location => $repo,
+    release  => $release
   }
 
   package { 'logitechmediaserver':
